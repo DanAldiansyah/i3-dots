@@ -5,10 +5,9 @@ Selamat datang di repository **i3-dots** saya! Ini adalah konfigurasi lingkungan
 ---
 
 ## Pratinjau (Screenshots)
-![My i3wm Rice Showcase]
-<img width="1366" height="768" alt="2026-05-20-111955_screenshot" src="https://github.com/user-attachments/assets/91589c40-a82a-4589-8e65-5e8338fcb3f0" />
-![Demo i3 WM]
-https://github.com/user-attachments/assets/f27b7753-b54f-4a83-bcc8-bd8bb08d4158
+![My i3wm Rice Showcase](<img width="1366" height="768" alt="2026-05-20-111955_screenshot" src="https://github.com/user-attachments/assets/91589c40-a82a-4589-8e65-5e8338fcb3f0" />)
+
+![My i3wm Rice Showcase](https://github.com/user-attachments/assets/f27b7753-b54f-4a83-bcc8-bd8bb08d4158)
 
 ---
 
@@ -27,7 +26,8 @@ Aplikasi dan komponen utama yang digunakan dalam setup ini:
 
 ## Cara Instalasi (Installation)
 
-> **Peringatan:** Harap backup konfigurasi asli Anda di folder `~/.config` sebelum menyalin dotfiles ini.
+> [!WARNING]
+> Harap backup konfigurasi asli Anda di folder `~/.config` sebelum menyalin dotfiles ini.
 
 ### 1. Clone Repository
 
@@ -41,12 +41,12 @@ cd i3-dots
 sudo apt install i3 polybar rofi picom nitrogen scrot 
 ```
 
-### 3. Coppy Dotfiles
+### 3. Copy Dotfiles
 ```bash
 cp -r i3 polybar rofi cava fastfetch picom ~/.config/
 ```
 
-### 4. chmod
+### 4. Chmod
 ```bash
 chmod +x ~/.config/rofi/scripts/*.sh
 ```
@@ -54,7 +54,7 @@ chmod +x ~/.config/rofi/scripts/*.sh
 ---
 
 ## Keybindings
-Berikut adalah daftar pintasan tombol (*keyboard shortcuts*) utama yang dikonfigurasi pada setup i3wm ini:
+> Berikut adalah daftar pintasan tombol (*keyboard shortcuts*) utama yang dikonfigurasi pada setup i3wm ini:
 
 | Kombinasi Tombol | Fungsi / Aksi | Aplikasi Pendukung |
 | :--- | :--- | :--- |
@@ -73,4 +73,5 @@ Berikut adalah daftar pintasan tombol (*keyboard shortcuts*) utama yang dikonfig
 | `Mod + Shift + R` | Memuat Ulang Sesi (*Restart*) | i3wm |
 | `Mod + Shift + C` | Memuat Ulang (*Reload*) | i3wm |
 
-> **Catatan:** Tombol `Mod` pada setup ini dikonfigurasi menggunakan tombol **Super** (tombol Windows).
+> [!NOTE] 
+> Tombol `Mod` pada setup ini dikonfigurasi menggunakan tombol **Super** (tombol Windows).
