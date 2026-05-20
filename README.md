@@ -7,6 +7,8 @@ Selamat datang di repository **i3-dots** saya! Ini adalah konfigurasi lingkungan
 ## Pratinjau (Screenshots)
 ![My i3wm Rice Showcase](<img width="1366" height="768" alt="2026-05-20-111955_screenshot" src="https://github.com/user-attachments/assets/91589c40-a82a-4589-8e65-5e8338fcb3f0" />)
 
+---
+
 ![My i3wm Rice Showcase](https://github.com/user-attachments/assets/f27b7753-b54f-4a83-bcc8-bd8bb08d4158)
 
 ---
