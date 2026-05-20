@@ -12,13 +12,20 @@ floating_modifier $mod
 bindsym $mod+Return exec i3-sensible-terminal
 
 # Deffault Menu Menu (rofi)
-bindsym $mod+d exec rofi -show drun
+bindsym $mod+r exec rofi -show drun
 
 # Rofi exit
 bindsym $mod+e exec --no-startup-id ~/.config/rofi/power.sh
 
 # Rofi wallpapers
 bindsym $mod+w exec ~/.config/rofi/wall.sh
+
+# Screenshot scrot
+bindsym Print exec --no-startup-id scrot '%Y-%m-%d-%H%M%S_screenshot.png' -e 'mv $f ~/Pictures/Screenshots/i3'
+
+# Screenshot area yang dipilih (tekan Mod + Print, lalu tarik mouse)
+bindsym $mod+Print exec --no-startup-id scrot -s '%Y-%m-%d-%H%M%S_area.png' -e 'mv $f ~/Pictures/Screenshots/i3'
+
 
 # --- SCREEN & AUDIO SETTINGS (Fn Button Laptop) ---
 # Screen Brightness (brightnessctl)
