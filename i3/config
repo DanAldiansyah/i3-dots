@@ -92,12 +92,12 @@ exec --no-startup-id nm-applet
 # Power manager XFCE
 exec --no-startup-id xfce4-power-manager
 # Polybar
-exec_always --no-startup-id polybar zexed
+exec_always --no-startup-id polybar main
 # autotiling
 exec_always --no-startup-id autotiling --limit 2
 
 # --- SYSTEM ---
-# Restart i3 (setelah edit config)
+# Restart i3
 bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 

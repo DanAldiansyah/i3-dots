@@ -1,0 +1,58 @@
+configuration {
+    font: "JetBrainsMono Nerd Font 12";
+    show-icons: false;
+    terminal: "kitty";
+    drun-display-format: "{icon} {name}";
+    location: 0;
+    separator-style: "none";
+}
+
+* {
+    bg:      #1e1e2e;
+    bg-alt:  #313244;
+    fg:      #cdd6f4;
+    red:     #f38ba8;
+    accent:  #b4befe; /* Lavender */
+
+    background-color: transparent;
+    text-color:       @fg;
+}
+
+window {
+    transparency:     "real";
+    location:         center;
+    width:            300px;
+    border:           2px;
+    border-radius:    15px;
+    border-color:     @accent;
+    background-color: @bg;
+}
+
+mainbox {
+    children: [ "listview" ]; /* HAPUS inputbar agar tidak ada kotak search */
+    padding:  15px;
+}
+
+listview {
+    columns: 1;
+    lines:   4;
+    spacing: 8px;
+    cycle:   true;
+}
+
+element {
+    padding:       12px;
+    border-radius: 10px;
+    background-color: @bg-alt;
+}
+
+element selected.normal {
+    background-color: @accent;
+    text-color:       @bg;
+}
+
+element-text {
+    font:             "JetBrainsMono Nerd Font 12";
+    horizontal-align: 0.5; /* Supaya teks benar-benar di tengah */
+    text-color:       inherit;
+}

@@ -1,0 +1,102 @@
+/**
+ * Catppuccin Mocha Wallpaper Selector Theme - FIXED
+ * Path: ~/.config/rofi/wall.rasi
+ **/
+
+configuration {
+    modi:                        "drun";
+    show-icons:                  false; /* Dimatikan agar nama file tidak tergeser ikon kosong */
+}
+
+* {
+    bg:      #1e1e2e;
+    bg-alt:  #313244;
+    fg:      #cdd6f4;
+    accent:  #b4befe; /* Lavender */
+    blue:    #89b4fa;
+
+    background-color: transparent;
+    text-color:       @fg;
+}
+
+window {
+    transparency:     "real";
+    location:         center;
+    anchor:           center;
+    width:            480px; /* Lebar optimal untuk nama file landscape */
+    border:           2px;
+    border-radius:    15px;
+    border-color:     @accent;
+    background-color: @bg;
+}
+
+mainbox {
+    enabled:          true;
+    orientation:      vertical;
+    children:         [ "inputbar", "listview" ];
+    spacing:          10px;
+    padding:          20px;
+}
+
+inputbar {
+    enabled:          true;
+    spacing:          10px;
+    margin:           0px 0px 10px 0px;
+    padding:          12px;
+    background-color: @bg-alt;
+    border-radius:    10px;
+    orientation:      horizontal;
+    children:         [ "textbox-prompt-colon", "entry" ];
+}
+
+textbox-prompt-colon {
+    enabled:          true;
+    expand:           false;
+    str:              "";
+    font:             "JetBrainsMono Nerd Font 12";
+    text-color:       @blue;
+    vertical-align:   0.5;
+}
+
+entry {
+    enabled:          true;
+    expand:           true;
+    text-color:       @fg;
+    cursor:           text;
+    placeholder:      "Cari nama wallpaper...";
+    placeholder-color: #6c7086;
+    vertical-align:   0.5;
+}
+
+listview {
+    enabled:          true;
+    columns:          1; /* DIPAKSA 1 kolom agar memanjang ke bawah */
+    lines:            8; /* Membatasi hanya 8 baris vertikal, sisanya bisa di-scroll */
+    spacing:          8px;
+    cycle:            true;
+    dynamic:          true;
+    scrollbar:        false;
+    layout:           vertical;
+    reverse:          false;
+    fixed-height:     true;
+    fixed-columns:    true;
+}
+
+element {
+    enabled:          true;
+    padding:          10px 15px;
+    border-radius:    8px;
+    orientation:      horizontal;
+}
+
+element selected.normal {
+    background-color: @accent;
+    text-color:       @bg; /* Teks otomatis jadi gelap saat dipilih agar kontras */
+}
+
+element-text {
+    font:             "JetBrainsMono Nerd Font 10";
+    vertical-align:   0.5;
+    horizontal-align: 0.0; /* Rata kiri agar nama file terbaca normal */
+    text-color:       inherit;
+}

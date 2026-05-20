@@ -1,0 +1,32 @@
+[general]
+framerate = 60
+bars = 100
+autosens = 1
+overshoot = 20
+sensitivity = 100
+
+[input]
+method = pulse
+source = auto
+
+[output]
+method = ncurses
+channels = mono
+mono_option = average
+reverse = 0
+
+[color]
+#foreground = '#00BFFF'
+gradient = 1
+gradient_count = 6
+gradient_color_1 = '#f5c2e7'
+gradient_color_2 = '#cba6f7'
+gradient_color_3 = '#89b4fa'
+gradient_color_4 = '#74c7ec'
+gradient_color_5 = '#94e2d5'
+gradient_color_6 = '#a6e3a1'
+
+[smoothing]
+integral = 70
+gravity = 100
+ignore = 0

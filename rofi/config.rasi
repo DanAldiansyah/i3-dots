@@ -1,0 +1,183 @@
+/**
+ * Author : Aditya Shakya (adi1090x)
+ * Github : @adi1090x
+ * Modified for Catppuccin Mocha Fix
+ **/
+
+/*****----- Configuration -----*****/
+configuration {
+    modi:                       "drun,run,filebrowser,window";
+    show-icons:                 true;
+    display-drun:               "";
+    display-run:                "";
+    display-filebrowser:        "";
+    display-window:             "";
+    drun-display-format:        "{name}";
+    window-format:              "{w} · {c} · {t}";
+    font:                       "JetBrainsMono Nerd Font 10";
+}
+
+/*****----- Global Properties -----*****/
+* {
+    /* Catppuccin Mocha Palette */
+    bg-col:      #1e1e2e; /* Base */
+    bg-alt:      #313244; /* Surface0 */
+    fg-col:      #cdd6f4; /* Text */
+    selected:    #b4befe; /* Lavender */
+    active:      #a6e3a1; /* Green */
+    urgent:      #f38ba8; /* Red */
+    border-col:  #b4befe; /* Lavender */
+    
+    background-color: transparent;
+    text-color:       @fg-col;
+}
+
+/*****----- Main Window -----*****/
+window {
+    transparency:                "real";
+    location:                    center;
+    anchor:                      center;
+    fullscreen:                  false;
+    width:                       500px;
+    x-offset:                    0px;
+    y-offset:                    0px;
+
+    enabled:                     true;
+    border-radius:               12px;
+    border:                      2px solid;
+    border-color:                @border-col;
+    cursor:                      "default";
+    background-color:            @bg-col;
+}
+
+/*****----- Main Box -----*****/
+mainbox {
+    enabled:                     true;
+    spacing:                     0px;
+    orientation:                 vertical;
+    children:                    [ "inputbar", "listbox" ];
+}
+
+listbox {
+    spacing:                     10px;
+    padding:                     15px;
+    orientation:                 vertical;
+    children:                    [ "message", "listview", "mode-switcher" ];
+}
+
+/*****----- Inputbar -----*****/
+inputbar {
+    enabled:                     true;
+    spacing:                     10px;
+    padding:                     40px 40px;
+    background-color:            @bg-alt;
+    /* Jika ingin pakai gambar, aktifkan baris bawah ini */
+    /* background-image:            url("~/.config/rofi/run-menu.jpg", width); */
+    text-color:                  @fg-col;
+    orientation:                 horizontal;
+    children:                    [ "textbox-prompt-colon", "entry" ];
+}
+
+textbox-prompt-colon {
+    enabled:                     true;
+    expand:                      false;
+    str:                         "";
+    padding:                     8px 12px;
+    border-radius:               8px;
+    background-color:            @bg-col;
+    text-color:                  @selected;
+    vertical-align:              0.5;
+}
+
+entry {
+    enabled:                     true;
+    expand:                      true;
+    padding:                     8px 12px;
+    border-radius:               8px;
+    background-color:            @bg-col;
+    text-color:                  inherit;
+    cursor:                      text;
+    placeholder:                 "Search...";
+    placeholder-color:           #6c7086; /* Overlay0 */
+    vertical-align:              0.5;
+}
+
+/*****----- Listview -----*****/
+listview {
+    enabled:                     true;
+    columns:                     1;
+    lines:                       6;
+    cycle:                       true;
+    dynamic:                     true;
+    scrollbar:                   false;
+    layout:                      vertical;
+    reverse:                     false;
+    fixed-height:                true;
+    fixed-columns:               true;
+    
+    spacing:                     5px;
+    text-color:                  @fg-col;
+    cursor:                      "default";
+}
+
+/*****----- Elements -----*****/
+element {
+    enabled:                     true;
+    spacing:                     10px;
+    padding:                     8px 12px;
+    border-radius:               8px;
+    cursor:                      pointer;
+}
+
+element normal.normal {
+    background-color:            transparent;
+    text-color:                  @fg-col;
+}
+
+element selected.normal {
+    background-color:            @selected;
+    text-color:                  @bg-col; /* Kontras tinggi: teks jadi gelap di atas warna terang */
+}
+
+element alternate.normal {
+    background-color:            transparent;
+    text-color:                  @fg-col;
+}
+
+element-icon {
+    size:                        24px;
+    cursor:                      inherit;
+}
+
+element-text {
+    vertical-align:              0.5;
+    text-color:                  inherit;
+}
+
+/*****----- Mode Switcher -----*****/
+mode-switcher{
+    enabled:                     true;
+    spacing:                     10px;
+    text-color:                  @fg-col;
+}
+
+button {
+    padding:                     8px;
+    border-radius:               8px;
+    background-color:            @bg-alt;
+    text-color:                  inherit;
+    cursor:                      pointer;
+}
+
+button selected {
+    background-color:            @selected;
+    text-color:                  @bg-col;
+}
+
+/*****----- Message -----*****/
+error-message {
+    padding:                     15px;
+    border-radius:               12px;
+    background-color:            @bg-col;
+    text-color:                  @urgent;
+}
