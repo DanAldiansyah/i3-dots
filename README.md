@@ -5,12 +5,12 @@ Selamat datang di repository **i3-dots** saya! Ini adalah konfigurasi lingkungan
 ---
 
 ## Pratinjau (Screenshots)
-![My i3wm Rice Showcase](<img width="1366" height="768" alt="2026-05-20-111955_screenshot" src="https://github.com/user-attachments/assets/91589c40-a82a-4589-8e65-5e8338fcb3f0" />)
+![My i3wm Rice Showcase]("screenshots/screenshot-1.png")
 
 ---
-
-![My i3wm Rice Showcase](https://github.com/user-attachments/assets/f27b7753-b54f-4a83-bcc8-bd8bb08d4158)
-
+<img src="screenshots/rofi.png" alt="rofi" width="350" />
+<img src="screenshots/rofi-power.png" alt="rofi" width="350" />
+<img src="screenshots/rofi-wallpaper.png" alt="rofi" width="350" />
 ---
 
 ## Spesifikasi Sistem & Komponen
@@ -34,23 +34,25 @@ Aplikasi dan komponen utama yang digunakan dalam setup ini:
 ### 1. Clone Repository
 
 ```bash
-git clone [https://github.com/DanAldiansyah/i3-dots.git](https://github.com/DanAldiansyah/i3-dots.git)
+git clone https://github.com/DanAldiansyah/i3-dots.git
 cd i3-dots
 
 ```
 ### 2. Install Package
 ```bash
-sudo apt install i3 polybar rofi picom nitrogen scrot 
+sudo apt install i3 polybar rofi picom dunst nitrogen scrot 
 ```
 
 ### 3. Copy Dotfiles
 ```bash
-cp -r i3 polybar rofi cava fastfetch picom ~/.config/
+cp -r i3 polybar rofi picom dunst wezterm cava fastfetch ~/.config/
 ```
 
 ### 4. Chmod
 ```bash
+chmod +x ~/.config/polybar/scripts/*.sh
 chmod +x ~/.config/rofi/scripts/*.sh
+chmod +x ~/.config/dunst/scripts/*.sh
 ```
 
 ---
@@ -63,14 +65,15 @@ chmod +x ~/.config/rofi/scripts/*.sh
 | `Mod + (1, 2, 3, 4, 5)` | ganti workspace | i3wm |
 | `Mod + SHIFT + (1, 2, 3, 4, 5)` | pindahkan aktif windows ke workspace lain | i3wm |
 | `Mod + arrow(up, right, down, left)` | ganti fokus window | i3wm |
-| `CTRL + arrow(up, right, down, left)` | resize window | i3wm |
-| `Mod + SPACE` | Floating window | i3wm |
+| `Ctrl + arrow(up, right, down, left)` | resize window | i3wm |
+| `Mod + Shift + Space` | Floating window | i3wm |
 | `Mod + Enter` | Membuka Terminal | WezTerm |
 | `Mod + Q` | Menutup Jendela yang Aktif | i3wm |
-| `Mod + W` | Membuka Menu Pemilih Wallpaper | Rofi + Custom Script |
+| `Mod + W` | Membuka Menu Pemilih Wallpaper | Rofi Wallpaper Script |
 | `Mod + E` | Membuka Menu Kontrol Daya | Rofi Powermenu Script |
 | `Mod + R` | Membuka Menu Aplikasi | Rofi Launcher |
 | `PrintScreen` | Tangkapan Layar Seluruh Layar | Scrot |
+| `Shift + PrintScreen` | Delay 5s Tangkapan Layar Seluruh Layar | Scrot |
 | `Mod + PrintScreen` | Tangkapan Layar Seleksi Area | Scrot |
 | `Mod + Shift + R` | Memuat Ulang Sesi (*Restart*) | i3wm |
 | `Mod + Shift + C` | Memuat Ulang (*Reload*) | i3wm |
