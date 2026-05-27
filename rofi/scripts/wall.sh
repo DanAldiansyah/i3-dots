@@ -1,28 +1,28 @@
 #!/usr/bin/env bash
 
-# 1. Wallpaper Dir
+# 1. Wallpapers DIR (Change if use different folder)
 WALL_DIR="$HOME/Pictures/i3"
 
-# 2. Theme Dir
+# 2. THEME DIR
 THEME="$HOME/.config/rofi/wall.rasi"
 
-# Get wallpaper dir and files
-files=$(ls "$WALL_DIR" | grep -E ".jpg$|.png$|.jpeg$")
+# Get files
+files=$(ls "$WALL_DIR" | grep -E ".jpg$|.png$|.jpeg$|.mp4$|.gif$")
 
-# Check Dir
+# Check DIR
 if [[ -z "$files" ]]; then
     notify-send "Wallpaper Error" "Folder $WALL_DIR kosong atau tidak ada."
     exit 1
 fi
 
-# Chose With Rofi
+# Chose with Rofi
 chosen=$(echo -e "$files" | rofi -dmenu -i -p "Pilih" -theme "$THEME")
 
 # Apply wallpaper
 if [[ -n "$chosen" ]]; then
-    # Using nitrogen for set wallpaper (zoom-fill)
+    # nitrogen for set wallpaper (zoom-fill agar penuh)
     nitrogen --set-zoom-fill --save "$WALL_DIR/$chosen"
     
     # Notification (opsional)
-    notify-send "Wallpaper" "Berhasil mengganti ke $chosen"
+    notify-send "Wallpaper" "Change Wallpaper To $chosen"
 fi

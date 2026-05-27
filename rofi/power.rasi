@@ -1,7 +1,7 @@
 configuration {
     font: "JetBrainsMono Nerd Font 12";
     show-icons: false;
-    terminal: "wezterm";
+    terminal: "kitty";
     drun-display-format: "{icon} {name}";
     location: 0;
     separator-style: "none";
@@ -53,6 +53,6 @@ element selected.normal {
 
 element-text {
     font:             "JetBrainsMono Nerd Font 12";
-    horizontal-align: 0.5;
+    horizontal-align: 0.5; 
     text-color:       inherit;
 }

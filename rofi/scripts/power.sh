@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-# Theme Dir
+# THEME DIR
 THEME="$HOME/.config/rofi/power.rasi"
 
 # Icon Nerd Font

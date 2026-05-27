@@ -71,7 +71,6 @@ inputbar {
     spacing:                     10px;
     padding:                     40px 40px;
     background-color:            @bg-alt;
-    /* Jika ingin pakai gambar, aktifkan baris bawah ini */
     /* background-image:            url("~/.config/rofi/run-menu.jpg", width); */
     text-color:                  @fg-col;
     orientation:                 horizontal;

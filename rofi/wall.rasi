@@ -52,7 +52,7 @@ inputbar {
 textbox-prompt-colon {
     enabled:          true;
     expand:           false;
-    str:              "";
+    str:              " ";
     font:             "JetBrainsMono Nerd Font 12";
     text-color:       @blue;
     vertical-align:   0.5;
