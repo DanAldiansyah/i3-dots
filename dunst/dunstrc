@@ -1,0 +1,92 @@
+# ❄️ Mochi-i3: Catppuccin Mocha Full Dunst Configuration
+# Path: ~/.config/dunst/dunstrc
+
+[global]
+    ### View ###
+    monitor = 0
+    follow = mouse
+    
+    # Size
+    width = 320
+    height = 120
+    origin = top-center
+    offset = 0x36
+    scale = 1
+    notification_limit = 3
+    gap_size = 6    
+
+    ### Progress Bar ###
+    progress_bar = true
+    progress_bar_height = 8
+    progress_bar_frame_width = 1
+    progress_bar_min_width = 150
+    progress_bar_max_width = 300
+    progress_bar_corner_radius = 4
+
+    ### Layout ###
+    indicate_hidden = yes
+    transparency = 0
+    separator_height = 2
+    padding = 12
+    horizontal_padding = 12
+    text_icon_padding = 10
+    frame_width = 2           
+    separator_color = frame
+    sort = yes
+    idle_threshold = 120
+
+    ### Typography ###
+    font = JetBrainsMono Nerd Font 10
+    line_height = 4
+    markup = full
+    format = "<span foreground='#b4befe' font_desc='JetBrainsMono Nerd Font Bold 11'>%s</span>\n%b"
+    alignment = left
+    vertical_alignment = center
+    show_age_threshold = 60
+    ellipsize = middle
+    ignore_newline = no
+    stack_duplicates = true
+    hide_duplicate_count = false
+    show_indicators = yes
+
+    ### Icon Settings ###
+    # icon_position = off
+    # min_icon_size = 32
+    # max_icon_size = 48
+    # icon_path = /usr/share/icons/Papirus/16x16/status/
+
+    ### Mouse Click ###
+    mouse_left_click = close_current
+    mouse_middle_click = do_action, close_current
+    mouse_right_click = close_all
+
+    ### Radius ###
+    corner_radius = 12 
+
+[experimental]
+    per_monitor_dpi = false
+
+# ==========================================================
+# NOTIFICATION & COLOR PALETE CATPPUCCIN MOCHA
+# ==========================================================
+
+[urgency_low]
+    # Sys Background
+    background = "#1e1e2e"
+    foreground = "#cdd6f4"
+    frame_color = "#313244"
+    timeout = 2
+
+[urgency_normal]
+    # General
+    background = "#1e1e2e"
+    foreground = "#cdd6f4"
+    frame_color = "#b4befe"
+    timeout = 3
+
+[urgency_critical]
+    # Warning
+    background = "#1e1e2e"
+    foreground = "#cdd6f4"
+    frame_color = "#f38ba8"
+    timeout = 0 # must be click
