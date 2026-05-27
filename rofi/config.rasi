@@ -136,7 +136,7 @@ element normal.normal {
 
 element selected.normal {
     background-color:            @selected;
-    text-color:                  @bg-col; /* Kontras tinggi: teks jadi gelap di atas warna terang */
+    text-color:                  @bg-col;
 }
 
 element alternate.normal {

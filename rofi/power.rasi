@@ -1,7 +1,7 @@
 configuration {
     font: "JetBrainsMono Nerd Font 12";
     show-icons: false;
-    terminal: "kitty";
+    terminal: "wezterm";
     drun-display-format: "{icon} {name}";
     location: 0;
     separator-style: "none";
@@ -29,7 +29,7 @@ window {
 }
 
 mainbox {
-    children: [ "listview" ]; /* HAPUS inputbar agar tidak ada kotak search */
+    children: [ "listview" ];
     padding:  15px;
 }
 
@@ -53,6 +53,6 @@ element selected.normal {
 
 element-text {
     font:             "JetBrainsMono Nerd Font 12";
-    horizontal-align: 0.5; /* Supaya teks benar-benar di tengah */
+    horizontal-align: 0.5;
     text-color:       inherit;
 }

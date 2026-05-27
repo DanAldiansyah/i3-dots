@@ -5,7 +5,7 @@
 
 configuration {
     modi:                        "drun";
-    show-icons:                  false; /* Dimatikan agar nama file tidak tergeser ikon kosong */
+    show-icons:                  false;
 }
 
 * {
@@ -23,7 +23,7 @@ window {
     transparency:     "real";
     location:         center;
     anchor:           center;
-    width:            480px; /* Lebar optimal untuk nama file landscape */
+    width:            480px;
     border:           2px;
     border-radius:    15px;
     border-color:     @accent;
@@ -63,15 +63,15 @@ entry {
     expand:           true;
     text-color:       @fg;
     cursor:           text;
-    placeholder:      "Cari nama wallpaper...";
+    placeholder:      "Search wallpaper...";
     placeholder-color: #6c7086;
     vertical-align:   0.5;
 }
 
 listview {
     enabled:          true;
-    columns:          1; /* DIPAKSA 1 kolom agar memanjang ke bawah */
-    lines:            8; /* Membatasi hanya 8 baris vertikal, sisanya bisa di-scroll */
+    columns:          2; /* 2 Columns */
+    lines:            4; /* 4 Rows */
     spacing:          8px;
     cycle:            true;
     dynamic:          true;
@@ -91,12 +91,12 @@ element {
 
 element selected.normal {
     background-color: @accent;
-    text-color:       @bg; /* Teks otomatis jadi gelap saat dipilih agar kontras */
+    text-color:       @bg;
 }
 
 element-text {
     font:             "JetBrainsMono Nerd Font 10";
     vertical-align:   0.5;
-    horizontal-align: 0.0; /* Rata kiri agar nama file terbaca normal */
+    horizontal-align: 0.0;
     text-color:       inherit;
 }

@@ -31,7 +31,7 @@ config.scrollback_lines = 5000
 config.initial_cols = 84
 config.initial_rows = 22
 
--- [[ Performa & Fix Glyphs ]]
+-- [[ Performance & Fix Glyphs ]]
 config.warn_about_missing_glyphs = false
 config.animation_fps = 30
 

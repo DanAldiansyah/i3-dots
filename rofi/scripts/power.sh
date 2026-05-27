@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 
-# Pastikan path ini benar
+# Theme Dir
 THEME="$HOME/.config/rofi/power.rasi"
 
-# Ikon Nerd Font
+# Icon Nerd Font
 options="  Logout\n  Suspend\n  Reboot\n  Shutdown"
 
 chosen="$(echo -e "$options" | rofi -dmenu -p "Power" -theme "$THEME")"
