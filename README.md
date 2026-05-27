@@ -5,7 +5,7 @@ Selamat datang di repository **i3-dots** saya! Ini adalah konfigurasi lingkungan
 ---
 
 ## Pratinjau (Screenshots)
-![My i3wm Rice Showcase]("screenshots/screenshot-1.png")
+<img src="screenshots/screenshot-1.png" alt="Showcase i3 ricing" />
 
 ---
 <img src="screenshots/rofi.png" alt="rofi" width="350" />
@@ -19,6 +19,7 @@ Aplikasi dan komponen utama yang digunakan dalam setup ini:
 * **WM:** i3wm
 * **Status Bar:** Polybar
 * **Application Launcher:** Rofi
+* **Notification:** Dunst
 * **Terminal Emulator:** WezTerm
 * **Font:** JetBrainsMono Nerd Font 
 * **Compositor:** Picom 
