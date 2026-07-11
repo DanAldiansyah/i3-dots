@@ -71,7 +71,7 @@ inputbar {
     spacing:                     10px;
     padding:                     40px 40px;
     background-color:            @bg-alt;
-    /* background-image:            url("~/.config/rofi/run-menu.jpg", width); */
+ // background-image:            url("~/Pictures/i3/violet.png", width);
     text-color:                  @fg-col;
     orientation:                 horizontal;
     children:                    [ "textbox-prompt-colon", "entry" ];

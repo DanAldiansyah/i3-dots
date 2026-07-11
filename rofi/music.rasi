@@ -1,0 +1,85 @@
+/**
+ * Catppuccin Mocha Rofi Music Controller - HORIZONTAL LAYOUT
+ * Path: ~/.config/rofi/music.rasi
+ **/
+
+configuration {
+    show-icons:                  false;
+}
+
+* {
+    bg:      #1e1e2e;
+    bg-alt:  #313244;
+    fg:      #cdd6f4;
+    accent:  #b4befe; /* Lavender */
+    green:   #a6e3a1; /* Mint Green */
+
+    background-color: transparent;
+    text-color:       @fg;
+}
+
+window {
+    transparency:     "real";
+    location:         center;
+    anchor:           center;
+    width:            540px;
+    border:           2px;
+    border-radius:    16px;
+    border-color:     @accent;
+    background-color: @bg;
+}
+
+mainbox {
+    enabled:          true;
+    orientation:      vertical;
+    children:         [ "inputbar", "listview" ];
+    spacing:          12px;
+    padding:          18px;
+}
+
+inputbar {
+    enabled:          true;
+    background-color: @bg-alt;
+    border-radius:    10px;
+    padding:          14px;
+    orientation:      horizontal;
+    children:         [ "prompt" ];
+}
+
+prompt {
+    enabled:          true;
+    text-color:       @green;
+    font:             "JetBrainsMono Nerd Font Bold 11";
+    horizontal-align: 0.5;
+}
+
+listview {
+    enabled:          true;
+    columns:          3; 
+    lines:            1;
+    spacing:          10px;
+    cycle:            true;
+    dynamic:          true;
+    scrollbar:        false;
+    layout:           vertical;
+    fixed-height:     true;
+}
+
+element {
+    enabled:          true;
+    padding:          12px;
+    border-radius:    8px;
+    background-color: @bg-alt;
+}
+
+element selected.normal {
+    background-color: @accent;
+    text-color:       @bg;
+}
+
+element-text {
+    font:             "JetBrainsMono Nerd Font Bold 10";
+    vertical-align:   0.5;
+    horizontal-align: 0.5;
+    text-color:       inherit;
+}

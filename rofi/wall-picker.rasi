@@ -1,0 +1,79 @@
+configuration {
+    show-icons:      true;
+}
+
+* {
+    bg:          #1e1e2e;
+    bg-alt:      #313244;
+    fg:          #cdd6f4;
+    accent:      #b4befe;
+    background-color: transparent;
+    text-color:       @fg;
+}
+
+window {
+    transparency:     "real";
+    location:         center;
+    anchor:           center;
+    width:            850px; 
+    border:           2px;
+    border-radius:    4px;
+    border-color:     @accent;
+    background-color: @bg;
+}
+
+mainbox {
+    children:         [ "inputbar", "listview" ];
+    spacing:          12px;
+    padding:          20px;
+}
+
+inputbar {
+    background-color: @bg-alt;
+    border-radius:    8px;
+    padding:          12px;
+    children:         [ "prompt", "entry" ];
+}
+
+prompt {
+    text-color:       #a6e3a1;
+    font:             "JetBrainsMono Nerd Font Bold 11";
+}
+
+entry {
+    placeholder:      "Use left/right arrow for chose wallpaper...";
+    placeholder-color: #585b70;
+    font:             "JetBrainsMono Nerd Font 11";
+}
+
+listview {
+    enabled:          true;
+    columns:          3;       
+    lines:            1;       
+    cycle:            true;
+    dynamic:          true;
+    scrollbar:        false;
+    layout:           vertical;
+    spacing:          12px;
+    fixed-height:     true;
+}
+
+element {
+    orientation:      vertical;
+    border-radius:    8px;
+    background-color: @bg-alt;
+}
+
+element selected.normal {
+    background-color: @accent;
+}
+
+element-icon {
+    size:             180px;
+    cursor:           pointer;
+    horizontal-align: 0.5;
+}
+
+element-text {
+    enabled:          false;
+}

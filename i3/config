@@ -12,27 +12,39 @@ floating_modifier $mod
 bindsym $mod+Return exec i3-sensible-terminal
 
 # Aplication Menu (rofi)
-bindsym $mod+r exec rofi -show drun
+bindsym $mod+r exec --no-startup-id rofi -show drun
 
 # Rofi exit
 bindsym $mod+e exec --no-startup-id ~/.config/rofi/scripts/power.sh
 
 # Rofi wallpapaers
-bindsym $mod+w exec ~/.config/rofi/scripts/wall.sh
+bindsym $mod+w exec --no-startup-id ~/.config/rofi/scripts/wall-picker.sh
 
 # Screenshot scrot
-bindsym Print exec --no-startup-id scrot '%Y-%m-%d-%H%M%S_screenshot.png' -e 'mv $f ~/Pictures/Screenshots/i3 && notify-send "Screenshot" "Screenshot Success"'
+bindsym --release Print exec "scrot -f ~/Pictures/i3-screenshots/normal/%Y%m%d-%H%M%S.png && notify-send 'Screenshot' 'Screenshot Success'"
 
 # Delay screenshot
-bindsym Shift+Print exec --no-startup-id notify-send "Screenshot" "Delay screenshot (5s)" | scrot -d 5 '%Y-%m-%d-%H%M%S_delay.png' -e 'mv $f ~/Pictures/Screenshots/i3 && notify-send "Screenshot" "Screenshot Success"'
+bindsym --release Shift+Print exec "notify-send 'Screenshot' 'Delay Screenshot (5s)' | scrot -d 5 -f ~/Pictures/i3-screenshots/delay/%Y%m%d-%H%M%S.png && notify-send 'Screenshot' 'Screenshot Success'"
 
 # Area Screenshot (Mod + Print)
-bindsym $mod+Print exec --no-startup-id scrot -s '%Y-%m-%d-%H%M%S_area.png' -e 'mv $f ~/Pictures/Screenshots/i3 && notify-send "Screenshot" "Screenshot Success"'
+bindsym --release $mod+Print exec "scrot -s -f ~/Pictures/i3-screenshots/area/%Y%m%d-%H%M%S.png && notify-send 'Screenshot' 'Screenshot Success' || notify-send 'Screenshot' 'Screenshot Abort'" 
 
-# --- SCREEN & AUDIO SETTINGS (Fn Button) ---
+# Rofi music player
+bindsym $mod+m exec --no-startup-id ~/.config/rofi/scripts/music-menu.sh
+
+# File manager (Thunar)
+bindsym $mod+t exec thunar
+
+# Brave-origin
+bindsym $mod+b exec brave-origin
+
+# Nmcli
+bindsym $mod+n exec --no-startup-id ~/.config/rofi/scripts/nmcli.sh
+
+# --- SCREEN & AUDIO SETTINGS (Fungsi Tombol Laptop) ---
 # Brightness (Brightnessctl + Dunst)
-bindsym XF86MonBrightnessUp   exec --no-startup-id brightnessctl set +10% && ~/.config/dunst/scripts/bright-noti.sh
-bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 10%- && ~/.config/dunst/scripts/bright-noti.sh
+bindsym XF86MonBrightnessUp   exec --no-startup-id brightnessctl set +5% && ~/.config/dunst/scripts/bright-noti.sh
+bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 5%- && ~/.config/dunst/scripts/bright-noti.sh
 
 # Volume Audio (pactl + Dunst)
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% && ~/.config/dunst/scripts/vol-noti.sh
@@ -82,24 +94,21 @@ bindsym $mod+Shift+4 move container to workspace number $ws4
 bindsym $mod+Shift+5 move container to workspace number $ws5
 
 bindsym $mod+f fullscreen toggle
-bindsym $mod+Shift+space floating toggle
+bindsym $mod+Shift+space floating toggle resize set 660 px 420 px, move position center
 
 # --- AUTOSTART ---
 # Wallpaper (nitrogen)
 exec_always --no-startup-id nitrogen --restore
 # Compositor Picom
 exec_always --no-startup-id picom --config ~/.config/picom/picom.conf
-# Applet Network Manager
-exec --no-startup-id nm-applet
-# Power manager
-exec --no-startup-id xfce4-power-manager
 # Polybar
-exec_always --no-startup-id polybar zexed
+exec_always --no-startup-id polybar top
 # autotiling
 exec_always --no-startup-id autotiling --limit 2
 # Dunst
 exec --no-startup-id dunst
-
+# Run music daemon
+exec --no-startup-id ~/.config/rofi/scripts/music-daemon.sh
 
 # --- SYSTEM ---
 # Restart i3

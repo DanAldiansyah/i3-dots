@@ -9,8 +9,8 @@
     # Size
     width = 320
     height = 120
-    origin = top-center
-    offset = 0x36
+    origin = top-right
+    offset = 4x42
     scale = 1
     notification_limit = 3
     gap_size = 6    
@@ -61,7 +61,7 @@
     mouse_right_click = close_all
 
     ### Radius ###
-    corner_radius = 12 
+    corner_radius = 4 
 
 [experimental]
     per_monitor_dpi = false
