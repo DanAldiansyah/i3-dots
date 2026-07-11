@@ -1,83 +1,131 @@
-# Mochi-i3: Catppuccin Mocha i3wm Dotfiles
+# Catppuccin Mocha i3wm Dotfiles
 
-Selamat datang di repository **i3-dots** saya! Ini adalah konfigurasi lingkungan desktop (*desktop environment/rice*) minimalis berbasis **i3wm** dengan skema warna **Catppuccin Mocha**. 
+Selamat datang di repository **i3-dots** saya! Ini adalah konfigurasi lingkungan desktop (*desktop environment/rice*) minimalis berbasis **i3wm** dengan skema warna **Catppuccin Mocha**.
 
----
-
-## Pratinjau (Screenshots)
-<img src="screenshots/screenshot-1.png" alt="Showcase i3 ricing" />
-
----
-<img src="screenshots/rofi.png" alt="rofi" width="350" />
-<img src="screenshots/rofi-power.png" alt="rofi" width="350" />
-<img src="screenshots/rofi-wallpaper.png" alt="rofi" width="350" />
----
-
-## Spesifikasi Sistem & Komponen
-Aplikasi dan komponen utama yang digunakan dalam setup ini:
-* **OS:** Linux Mint (XFCE Base)
-* **WM:** i3wm
-* **Status Bar:** Polybar
-* **Application Launcher:** Rofi
-* **Notification:** Dunst
-* **Terminal Emulator:** WezTerm
-* **Font:** JetBrainsMono Nerd Font 
-* **Compositor:** Picom 
-* **Wallpaper Manager:** Nitrogen
+[![Built with i3wm](https://img.shields.io/badge/WM-i3gaps-b4befe?style=flat-square&logo=i3)](https://i3wm.org/)
+[![Color Palette](https://img.shields.io/badge/Palette-Catppuccin_Mocha-1e1e2e?style=flat-square&logo=catppuccin)](https://github.com/catppuccin/catppuccin)
+[![OS Support](https://img.shields.io/badge/OS-Linux_Mint-text?style=flat-square&logo=linuxmint&logoColor=white&color=87cf3e)](https://linuxmint.com/)
 
 ---
 
-## Cara Instalasi (Installation)
+## 📸 Pratinjau (Screenshots)
+
+<p align="center">
+  <img src="screenshots/ricing.png" alt="Showcase i3 ricing" width="100%" />
+</p>
+
+---
+
+## 💻 Spesifikasi Sistem & Komponen
+
+| Komponen | Aplikasi / Aset yang Digunakan |
+| :--- | :--- |
+| **OS Base** | Linux Mint (XFCE Edition) |
+| **Window Manager** | i3wm / i3-gaps |
+| **Status Bar** | Polybar (Catppuccin Theme) |
+| **Application Launcher** | Rofi (Modern Menu Layout) |
+| **Notification Daemon** | Dunst |
+| **Terminal Emulator** | WezTerm |
+| **Shell Prompt** | Zsh + Starship Prompt |
+| **Compositor (Blur/Transparansi)** | Picom |
+| **Wallpaper Engine** | Nitrogen / Feh |
+| **Main Font** | JetBrainsMono Nerd Font |
+
+---
+
+## 🚀 Cara Instalasi (Installation)
 
 > [!WARNING]
-> Harap backup konfigurasi asli Anda di folder `~/.config` sebelum menyalin dotfiles ini.
+> Harap cadangkan (*backup*) konfigurasi asli Anda di folder `~/.config` sebelum menyalin dotfiles ini untuk menghindari hilangnya data setelan lama.
 
 ### 1. Clone Repository
-
 ```bash
 git clone https://github.com/DanAldiansyah/i3-dots.git
 cd i3-dots
 
 ```
-### 2. Install Package
+
+### 2. Install Package Pendukung
+
 ```bash
-sudo apt install i3 polybar rofi picom dunst nitrogen scrot 
+sudo apt update
+sudo apt install i3 polybar rofi picom dunst cava fastfetch nitrogen scrot zsh thunar
+
+```
+> [!NOTE]
+> Pastikan Anda sudah menginstal **WezTerm** dan **Starship Prompt** secara terpisah sesuai dokumentasi resminya).
+
+### 3. Salin File Konfigurasi
+
+```bash
+cp -r i3 polybar rofi picom dunst wezterm cava fastfetch starship ~/.config/
+
 ```
 
-### 3. Copy Dotfiles
-```bash
-cp -r i3 polybar rofi picom dunst wezterm cava fastfetch ~/.config/
-```
+### 4. Berikan Izin Eksekusi Skrip (*Chmod*)
 
-### 4. Chmod
 ```bash
 chmod +x ~/.config/polybar/scripts/*.sh
 chmod +x ~/.config/rofi/scripts/*.sh
 chmod +x ~/.config/dunst/scripts/*.sh
+
+```
+
+### 5. Salin Kumpulan Wallpaper
+
+```bash
+cp -r i3-wallpapers ~/Pictures/
+
+```
+
+### 6. Siapkan Direktori Tangkapan Layar
+
+```bash
+mkdir -p ~/Pictures/i3-screenshots/normal
+mkdir -p ~/Pictures/i3-screenshots/area
+mkdir -p ~/Pictures/i3-screenshots/delay
+
 ```
 
 ---
 
-## Keybindings
-> Berikut adalah daftar pintasan tombol (*keyboard shortcuts*) utama yang dikonfigurasi pada setup i3wm ini:
+## Pintasan Keyboard Utama (Keybindings)
+
+> [!NOTE]
+> Tombol `Mod` pada setup ini dikonfigurasi menggunakan tombol **Super** (Tombol Windows).
+
+### Manajemen Jendela & Workspace
+
+| Kombinasi Tombol | Fungsi / Aksi | Aplikasi |
+| --- | --- | --- |
+| `Mod + (1-5)` | Berpindah Workspace | i3wm |
+| `Mod + SHIFT + (1-5)` | Pindahkan jendela aktif ke Workspace lain | i3wm |
+| `Mod + Arrow (Up/Right/Down/Left)` | Mengubah fokus jendela aktif | i3wm |
+| `Ctrl + Arrow (Up/Right/Down/Left)` | Mengubah ukuran (*resize*) jendela | i3wm |
+| `Mod + Shift + Space` | Mengaktifkan mode Floating Window | i3wm |
+| `Mod + Q` | Menutup jendela yang sedang aktif | i3wm |
+| `Mod + Shift + C` | Memuat ulang konfigurasi (*Reload*) | i3wm |
+| `Mod + Shift + R` | Memuat ulang sesi i3wm (*Restart sesi*) | i3wm |
+
+### Peluncur Aplikasi & Alat Pintas
 
 | Kombinasi Tombol | Fungsi / Aksi | Aplikasi Pendukung |
-| :--- | :--- | :--- |
-| `Mod + (1, 2, 3, 4, 5)` | ganti workspace | i3wm |
-| `Mod + SHIFT + (1, 2, 3, 4, 5)` | pindahkan aktif windows ke workspace lain | i3wm |
-| `Mod + arrow(up, right, down, left)` | ganti fokus window | i3wm |
-| `Ctrl + arrow(up, right, down, left)` | resize window | i3wm |
-| `Mod + Shift + Space` | Floating window | i3wm |
-| `Mod + Enter` | Membuka Terminal | WezTerm |
-| `Mod + Q` | Menutup Jendela yang Aktif | i3wm |
-| `Mod + W` | Membuka Menu Pemilih Wallpaper | Rofi Wallpaper Script |
-| `Mod + E` | Membuka Menu Kontrol Daya | Rofi Powermenu Script |
-| `Mod + R` | Membuka Menu Aplikasi | Rofi Launcher |
-| `PrintScreen` | Tangkapan Layar Seluruh Layar | Scrot |
-| `Shift + PrintScreen` | Delay 5s Tangkapan Layar Seluruh Layar | Scrot |
-| `Mod + PrintScreen` | Tangkapan Layar Seleksi Area | Scrot |
-| `Mod + Shift + R` | Memuat Ulang Sesi (*Restart*) | i3wm |
-| `Mod + Shift + C` | Memuat Ulang (*Reload*) | i3wm |
+| --- | --- | --- |
+| `Mod + Enter` | Membuka Terminal Emulator | WezTerm |
+| `Mod + R` | Membuka Menu Peluncur Aplikasi | Rofi Launcher |
+| `Mod + W` | Membuka Menu Pemilih Wallpaper (Visual Grid) | Rofi Wallpaper Script |
+| `Mod + E` | Membuka Menu Kontrol Daya (Powermenu) | Rofi Powermenu Script |
+| `Mod + M` | Membuka Kontroler Musik | Rofi Music Script |
+| `Mod + T` | Membuka File Manager | Thunar |
+| `Mod + B` | Membuka Web Browser | Brave Browser |
+| `Mod + N` | Membuka Pengatur Jaringan Internet | nmcli / nmtui |
 
-> [!NOTE] 
-> Tombol `Mod` pada setup ini dikonfigurasi menggunakan tombol **Super** (tombol Windows).
+### 📸 Tangkapan Layar (Screenshots)
+
+| Kombinasi Tombol | Fungsi / Aksi | Aplikasi |
+| --- | --- | --- |
+| `PrintScreen` | Tangkapan layar penuh secara instan | Scrot |
+| `Shift + PrintScreen` | Tangkapan layar penuh dengan jeda waktu 5 detik | Scrot |
+| `Mod + PrintScreen` | Tangkapan layar pada area tertentu saja (Seleksi) | Scrot |
+
+---
