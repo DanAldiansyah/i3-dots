@@ -8,15 +8,20 @@ Selamat datang di repository **i3-dots** saya! Ini adalah konfigurasi lingkungan
 
 ---
 
-## 📸 Pratinjau (Screenshots)
+## Pratinjau (Screenshots)
 
 <p align="center">
   <img src="screenshots/ricing.png" alt="Showcase i3 ricing" width="100%" />
 </p>
 
+
+<p align="center">
+  <img src="screenshots/wall-picker.png" alt="Wallpaper selector" width="100%" />
+</p>
+
 ---
 
-## 💻 Spesifikasi Sistem & Komponen
+## Spesifikasi Sistem & Komponen
 
 | Komponen | Aplikasi / Aset yang Digunakan |
 | :--- | :--- |
@@ -33,7 +38,7 @@ Selamat datang di repository **i3-dots** saya! Ini adalah konfigurasi lingkungan
 
 ---
 
-## 🚀 Cara Instalasi (Installation)
+## Cara Instalasi (Installation)
 
 > [!WARNING]
 > Harap cadangkan (*backup*) konfigurasi asli Anda di folder `~/.config` sebelum menyalin dotfiles ini untuk menghindari hilangnya data setelan lama.
@@ -117,10 +122,10 @@ mkdir -p ~/Pictures/i3-screenshots/delay
 | `Mod + E` | Membuka Menu Kontrol Daya (Powermenu) | Rofi Powermenu Script |
 | `Mod + M` | Membuka Kontroler Musik | Rofi Music Script |
 | `Mod + T` | Membuka File Manager | Thunar |
-| `Mod + B` | Membuka Web Browser | Brave Browser |
+| `Mod + B` | Membuka Web Browser | Brave Origin |
 | `Mod + N` | Membuka Pengatur Jaringan Internet | nmcli / nmtui |
 
-### 📸 Tangkapan Layar (Screenshots)
+### Tangkapan Layar (Screenshots)
 
 | Kombinasi Tombol | Fungsi / Aksi | Aplikasi |
 | --- | --- | --- |
