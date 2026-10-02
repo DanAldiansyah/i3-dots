@@ -1,30 +1,42 @@
 #!/usr/bin/env bash
 
-# Wallpapers directory & theme directory
-WALL_DIR="$HOME/Pictures/i3-wallpapers"
-THEME="$HOME/.config/rofi/wall-picker.rasi"
+WALLPAPER_DIR="$HOME/Pictures/i3-wallpapers"
+CACHE_DIR="$HOME/.cache/wallpaper-thumbs"
+ROFI_THEME="$HOME/.config/rofi/wall-picker.rasi"
 
-# Get img format
-MENU_OPTIONS=""
-for img in "$WALL_DIR"/*.{png,jpg,jpeg}; do
-    if [ -f "$img" ]; then
-        basename_img=$(basename "$img")
-        # Show img icon
-        MENU_OPTIONS+="${basename_img}\x00icon\x1f${img}\n"
-    fi
-done
+mkdir -p "$CACHE_DIR"
 
-# Chose with rofi
-CHOSEN=$(echo -e "$MENU_OPTIONS" | rofi -dmenu -p "   Wallpaper " -theme "$THEME")
-
-# Esc for exit
-if [ -z "$CHOSEN" ]; then
-    notify-send -u low "Wallpaper Selector" "Cancel select wallpapers"
-    exit 0
+if ! command -v nitrogen &> /dev/null; then
+    notify-send "Error" "Nitrogen Not Yet Installed."
+    exit 1
 fi
 
-# Set wallpaper with Nitrogen
-nitrogen --set-zoom-fill "$WALL_DIR/$CHOSEN" --save
+# Generate Thumbnail (imagemagick)
+generate_thumb() {
+    local src="$1"
+    local thumb="$2"
+    if [ ! -f "$thumb" ] || [ "$src" -nt "$thumb" ]; then
+        convert "$src" -resize 500x500^ -gravity center -extent 500x500 "$thumb"
+    fi
+}
 
-# Notification
-notify-send "Wallpaper Selector" "Change Wallpaper to $CHOSEN"
+# Scan wallpaper
+rofi_input=""
+while IFS= read -r img; do
+    [ -z "$img" ] && continue
+    filename=$(basename "$img")
+    thumb="$CACHE_DIR/${filename}.png"
+    
+    generate_thumb "$img" "$thumb"
+    
+    rofi_input+="${filename}\0icon\x1f${thumb}\n"
+done < <(find "$WALLPAPER_DIR" -maxdepth 1 -type f \( -iname "*.jpg" -o -iname "*.png" -o -iname "*.jpeg" -o -iname "*.webp" \))
+
+selected=$(echo -en "$rofi_input" | rofi -dmenu -theme "$ROFI_THEME")
+
+# Apply wallpaper via nitrogen
+if [ -n "$selected" ]; then
+    full_path="$WALLPAPER_DIR/$selected"
+    nitrogen --set-zoom-fill "$full_path" --save
+    notify-send "Wallpaper" "Change wallpaper to $selected"
+fi

@@ -1,0 +1,15 @@
+/*******************************************************************************
+ * Catppuccin Mocha
+ *******************************************************************************/
+
+* {
+    base:             #1e1e2e;
+    surface-0:        #313244;
+    text:             #cdd6f4;
+    lavender:         #b4befe;
+    green:            #a6e3a1;
+    red:              #f38ba8;
+
+    background-color:   transparent;
+    text-color:         @text;
+}

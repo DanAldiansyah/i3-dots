@@ -1,79 +1,82 @@
+/*******************************************************************************
+ * Wallpaper Picker
+ *******************************************************************************/
+
 configuration {
-    show-icons:      true;
+    show-icons: true;
 }
+
+@import               "./config/colors.rasi"
+@import               "./config/fonts.rasi"
 
 * {
-    bg:          #1e1e2e;
-    bg-alt:      #313244;
-    fg:          #cdd6f4;
-    accent:      #b4befe;
-    background-color: transparent;
-    text-color:       @fg;
+    background-color:   @base;
 }
 
+
 window {
-    transparency:     "real";
-    location:         center;
-    anchor:           center;
-    width:            850px; 
-    border:           2px;
-    border-radius:    4px;
-    border-color:     @accent;
-    background-color: @bg;
+    background-color:   @base;
+    text-color:         @text;
+    width:              100%;
+    location:           south;
+    anchor:             south;
 }
 
 mainbox {
+    enabled:          true;
+    orientation:      vertical;
     children:         [ "inputbar", "listview" ];
-    spacing:          12px;
-    padding:          20px;
 }
 
 inputbar {
-    background-color: @bg-alt;
-    border-radius:    8px;
-    padding:          12px;
-    children:         [ "prompt", "entry" ];
+    enable:         true;
+    padding:        8px;
+    children:       [ "textbox-prompt-colon" ];
 }
 
-prompt {
-    text-color:       #a6e3a1;
-    font:             "JetBrainsMono Nerd Font Bold 11";
-}
-
-entry {
-    placeholder:      "Use left/right arrow for chose wallpaper...";
-    placeholder-color: #585b70;
-    font:             "JetBrainsMono Nerd Font 11";
+textbox-prompt-colon {
+    enable:             true;
+    expand:             true;
+    center:             true;
+    border-radius:      4px;
+    str:                "Select Your Wallpaper...";
+    padding:            8px 14px;
+    background-color:   @surface-0;
+    text-color:         @text;
+    horizontal-align:   0.5;
 }
 
 listview {
-    enabled:          true;
-    columns:          3;       
-    lines:            1;       
-    cycle:            true;
-    dynamic:          true;
-    scrollbar:        false;
-    layout:           vertical;
-    spacing:          12px;
-    fixed-height:     true;
+    enabled:            true;
+    columns:            6;
+    lines:              1;
+    padding:            20px;
+    spacing:            12px;
+    cycle:              true;
+    dynamic:            true;
+    scrollbar:          false;
+    layout:             vertical;
+    reverse:            false;
+    fixed-height:       true;
+    fixed-columns:      true;
 }
 
 element {
-    orientation:      vertical;
-    border-radius:    8px;
-    background-color: @bg-alt;
+    enabled:            true;
+    border-radius:      4px;
+    orientation:        vertical;
+    children:           [ "element-icon" ]; 
 }
 
 element selected.normal {
-    background-color: @accent;
+    border:             12px;
+    border-radius:      4px;
+    border-color:       @lavender;
 }
 
 element-icon {
-    size:             180px;
-    cursor:           pointer;
-    horizontal-align: 0.5;
-}
-
-element-text {
-    enabled:          false;
+    size:               240px;
+    horizontal-align:   0.5;
+    vertical-align:     0.5;
+    cursor:             pointer;
 }

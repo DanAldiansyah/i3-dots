@@ -1,27 +1,25 @@
+/*******************************************************************************
+ * Wifi Manager (nmcli)
+ *******************************************************************************/
+
 configuration {
     show-icons:                  false;
 }
 
-* {
-    bg:          #1e1e2e;
-    bg-alt:      #313244;
-    fg:          #cdd6f4;
-    accent:      #b4befe;
-    green:       #a6e3a1;
-
-    background-color: transparent;
-    text-color:       @fg;
-}
+@import               "./config/colors.rasi"
+@import               "./config/fonts.rasi"
 
 window {
     transparency:     "real";
-    location:         center;
-    anchor:           center;
-    width:            480px;
+    location:         northeast;
+    anchor:           northeast;
+    x-offset:         -12px;
+    y-offset:         48px;
+    width:            360px;
     border:           2px;
-    border-radius:    12px;
-    border-color:     @accent;
-    background-color: @bg;
+    border-radius:    4px;
+    border-color:     @lavender;
+    background-color: @base;
 }
 
 mainbox {
@@ -34,23 +32,28 @@ mainbox {
 
 inputbar {
     enabled:          true;
-    orientation:      horizontal;
-    children:         [ "prompt", "entry" ];
-    background-color: @bg-alt;
-    border-radius:    8px;
-    padding:          10px;
+    border-radius:    4px;
+    spacing:          8px;
+    children:         [ "textbox-prompt-colon", "entry" ];
 }
 
-prompt {
-    enabled:          true;
-    text-color:       @green;
-    font:             "JetBrainsMono Nerd Font Bold 10";
+textbox-prompt-colon {
+    enable:             true;
+    expand:             false;
+    border-radius:      4px;
+    str:                "󰖩 ";
+    padding:            8px 14px;
+    background-color:   @green;
+    text-color:         @base;
 }
 
 entry {
-    enabled:          true;
-    text-color:       @fg;
-    font:             "JetBrainsMono Nerd Font 10";
+    placeholder:        "WiFi SSID: ";
+    padding:            4px;
+    enabled:            true;
+    text-color:         @text;
+    background-color:   @surface-0;
+    vertical-align:     0.5;
 }
 
 listview {
@@ -68,16 +71,15 @@ listview {
 element {
     enabled:          true;
     padding:          10px;
-    border-radius:    6px;
+    border-radius:    4px;
 }
 
 element selected.normal {
-    background-color: @accent;
-    text-color:       @bg;
+    background-color: @lavender;
+    text-color:       @base;
 }
 
 element-text {
-    font:             "JetBrainsMono Nerd Font 10";
     vertical-align:   0.5;
     text-color:       inherit;
 }
