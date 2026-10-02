@@ -30,7 +30,7 @@ bindsym --release Shift+Print exec "notify-send 'Screenshot' 'Delay Screenshot (
 bindsym --release $mod+Print exec "scrot -s -f ~/Pictures/i3-screenshots/area/%Y%m%d-%H%M%S.png && notify-send 'Screenshot' 'Screenshot Success' || notify-send 'Screenshot' 'Screenshot Abort'" 
 
 # Rofi music player
-bindsym $mod+m exec --no-startup-id ~/.config/rofi/scripts/music-menu.sh
+bindsym $mod+m exec --no-startup-id ~/.config/rofi/scripts/music-player.sh
 
 # File manager (Thunar)
 bindsym $mod+t exec thunar

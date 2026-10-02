@@ -1,0 +1,92 @@
+/*******************************************************************************
+ * Music Player
+ *******************************************************************************/
+
+configuration {
+    show-icons:                  false;
+}
+
+@import               "./config/colors.rasi"
+@import               "./config/fonts.rasi"
+
+
+window {
+    transparency:       "real";
+    background-color:   @base;
+    border:             2px;
+    border-color:       @lavender;
+    border-radius:      4px;
+    width:              560px;
+    location:           center;
+    anchor:             center;
+}
+
+mainbox {
+    enabled:            true;
+    orientation:        vertical;
+    spacing:            8px;
+    padding:            8px;
+    children:           [ "inputbar", "message", "listview" ];
+}
+
+inputbar {
+    enable:             true;
+    spacing:            8px;
+    children:           [ "textbox-prompt-colon", "prompt" ];
+}
+
+textbox-prompt-colon {
+    enable:             true;
+    expand:             false;
+    border-radius:      4px;
+    str:                "󰎇";
+    padding:            8px 14px;
+    background-color:   @red;
+    text-color:         @base;
+}
+
+prompt {
+    enabled:            true;
+    padding:            8px;
+    border-radius:      4px;
+    background-color:   @green;
+    text-color:         @base;
+    vertical-align:     0.5;
+}
+
+message {
+    enabled:            true;
+    padding:            10px;
+    border-radius:      4px;
+    background-color:   @surface-0;
+    text-color:         @text;
+}
+
+listview {
+    enabled:            true;
+    columns:            4;
+    lines:              1;
+    cycle:              true;
+    scrollbar:          false;
+    layout:             vertical;
+    spacing:            8px;
+}
+
+element {
+    enabled:            true;
+    padding:            12px;
+    border-radius:      4px;
+    background-color:   @surface-0;
+    text-color:         @text;
+}
+
+element selected.normal {
+    background-color:   @lavender;
+    text-color:         @base;
+}
+
+element-text {
+    horizontal-align:   0.5;
+    text-color:         inherit;
+    font:               "JetBrainsMono Nerd Font 24";
+}

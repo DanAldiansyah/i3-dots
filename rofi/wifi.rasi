@@ -48,9 +48,9 @@ textbox-prompt-colon {
 }
 
 entry {
-    placeholder:        "WiFi SSID: ";
-    padding:            4px;
     enabled:            true;
+    placeholder:        "Type Here...";
+    padding:            4px;
     text-color:         @text;
     background-color:   @surface-0;
     vertical-align:     0.5;

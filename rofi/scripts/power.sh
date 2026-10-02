@@ -7,7 +7,7 @@ THEME="$HOME/.config/rofi/power.rasi"
 logout="󰍃"
 suspend=""
 reboot=""
-shutdown=""
+shutdown="󰐥"
 
 options="$logout\n$suspend\n$reboot\n$shutdown"
 username=$(whoami)

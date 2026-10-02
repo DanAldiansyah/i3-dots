@@ -60,36 +60,30 @@ message {
 }
 
 listview {
-    columns:  4;
-    lines:    1;
-    spacing:  8px;
-    cycle:    true;
+    enabled:          true;
+    columns:          4;
+    lines:            1;
+    cycle:            true;
+    scrollbar:        false;
+    layout:           vertical;
+    spacing:          8px;
 }
-
-textbox {
-    background-color:            inherit;
-    text-color:                  inherit;
-    vertical-align:              0.5;
-    horizontal-align:            0.0;
-}
-
 
 element {
-    padding:            24px;
-    border-radius:      4px;
-    background-color:   @surface-0;
-    text-color:         inherit;
+    enabled:          true;
+    padding:          12px;
+    border-radius:    4px;
+    background-color: @surface-0;
+    text-color:       @text;
 }
 
 element selected.normal {
-    background-color:   @lavender;
-    text-color:         inherit;
+    background-color: @lavender;
+    text-color:       @base;
 }
 
 element-text {
-    font:               "JetBrainsMono Nerd Font 24";
-    vertical-align:     0.5;
     horizontal-align:   0.5;
-    background-color:   inherit;
-    text-color:         @base;    
+    text-color:         inherit;
+    font:               "JetBrainsMono Nerd Font 24";
 }
