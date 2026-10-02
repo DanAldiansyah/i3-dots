@@ -1,0 +1,68 @@
+/*******************************************************************************
+ * Screenshot (scrot)
+ *******************************************************************************/
+
+configuration {
+    show-icons:                  false;
+}
+
+@import               "./config/colors.rasi"
+@import               "./config/fonts.rasi"
+
+window {
+    transparency:     "real";
+    location:         north;
+    anchor:           north;
+    x-offset:         -12px;
+    y-offset:         48px;
+    width:            560px;
+    border:           2px;
+    border-radius:    4px;
+    border-color:     @lavender;
+    background-color: @base;
+}
+
+mainbox {
+    enabled:          true;
+    orientation:      vertical;
+    children:         [ "message", "listview" ];
+    spacing:          10px;
+    padding:          14px;
+}
+
+message {
+    enabled:                     true;
+    padding:                     10px;
+    border-radius:               4px;
+    background-color:            @surface-0;
+    text-color:                  @text;
+}
+
+listview {
+    enabled:          true;
+    columns:          4;
+    lines:            1;
+    cycle:            true;
+    scrollbar:        false;
+    layout:           vertical;
+    spacing:          8px;
+}
+
+element {
+    enabled:          true;
+    padding:          12px;
+    border-radius:    4px;
+    background-color: @surface-0;
+    text-color:       @text;
+}
+
+element selected.normal {
+    background-color: @lavender;
+    text-color:       @base;
+}
+
+element-text {
+    horizontal-align:   0.5;
+    text-color:         inherit;
+    font:               "JetBrainsMono Nerd Font 20";
+}
