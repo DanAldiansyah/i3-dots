@@ -6,17 +6,12 @@ configuration {
     show-icons: true;
 }
 
-@import               "./config/colors.rasi"
-@import               "./config/fonts.rasi"
-
-* {
-    background-color:   @base;
-}
-
+@import "./current-theme.rasi"
+@import "./themes/fonts.rasi"
 
 window {
-    background-color:   @base;
-    text-color:         @text;
+    background-color:   @background;
+    text-color:         @foreground;
     width:              100%;
     location:           south;
     anchor:             south;
@@ -41,8 +36,8 @@ textbox-prompt-colon {
     border-radius:      4px;
     str:                "Select Your Wallpaper...";
     padding:            8px 14px;
-    background-color:   @surface-0;
-    text-color:         @text;
+    background-color:   @background-alt;
+    text-color:         @foreground;
     horizontal-align:   0.5;
 }
 
@@ -71,7 +66,7 @@ element {
 element selected.normal {
     border:             12px;
     border-radius:      4px;
-    border-color:       @lavender;
+    border-color:       @primary;
 }
 
 element-icon {

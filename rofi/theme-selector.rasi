@@ -1,0 +1,85 @@
+/*******************************************************************************
+ * Wifi Manager (nmcli)
+ *******************************************************************************/
+
+configuration {
+    show-icons:                  false;
+}
+
+@import "./current-theme.rasi"
+@import "./themes/fonts.rasi"
+
+window {
+    transparency:     "real";
+    location:         northeast;
+    anchor:           northeast;
+    x-offset:         -12px;
+    y-offset:         48px;
+    width:            360px;
+    border:           2px;
+    border-radius:    4px;
+    border-color:     @primary;
+    background-color: @background;
+}
+
+mainbox {
+    enabled:          true;
+    orientation:      vertical;
+    children:         [ "inputbar", "listview" ];
+    spacing:          10px;
+    padding:          14px;
+}
+
+inputbar {
+    enabled:          true;
+    border-radius:    4px;
+    spacing:          8px;
+    children:         [ "textbox-prompt-colon", "prompt" ];
+}
+
+textbox-prompt-colon {
+    enable:             true;
+    expand:             false;
+    border-radius:      4px;
+    str:                " ";
+    padding:            8px 14px;
+    background-color:   @primary;
+    text-color:         @background;
+}
+
+prompt {
+    enabled:            true;
+    padding:            8px;
+    border-radius:      4px;
+    text-color:         @foreground;
+    background-color:   @background-alt;
+    vertical-align:     0.5;
+}
+
+listview {
+    enabled:          true;
+    columns:          1;
+    lines:            6;
+    spacing:          6px;
+    cycle:            true;
+    dynamic:          true;
+    scrollbar:        false;
+    layout:           vertical;
+    fixed-height:     false;
+}
+
+element {
+    enabled:          true;
+    padding:          10px;
+    border-radius:    4px;
+}
+
+element selected.normal {
+    background-color: @primary;
+    text-color:       @background;
+}
+
+element-text {
+    vertical-align:   0.5;
+    text-color:       inherit;
+}

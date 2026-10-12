@@ -1,0 +1,14 @@
+/*******************************************************************************
+ * Ayanami Rei Neon Genesis Evangelion
+ *******************************************************************************/
+
+* {
+    background:             #1e1e2e;
+    background-alt:         #313244;
+    foreground:             #cdd6f4;
+    primary:                #b4befe;
+    secondary:              #f38ba8;
+
+    background-color:   transparent;
+    text-color:         @foreground;
+}

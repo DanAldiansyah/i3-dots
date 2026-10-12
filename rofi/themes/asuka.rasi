@@ -1,0 +1,14 @@
+/*******************************************************************************
+ * Asuka Langley Neon Genesis Evangelion
+ *******************************************************************************/
+
+* {
+    background:             #252525;
+    background-alt:         #323232;
+    foreground:             #eaeaea;
+    primary:                #e81400;
+    secondary:              #9a9a9a;
+
+    background-color:   transparent;
+    text-color:         @foreground;
+}

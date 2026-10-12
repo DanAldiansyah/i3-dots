@@ -6,15 +6,15 @@ configuration {
     show-icons:                  false;
 }
 
-@import               "./config/colors.rasi"
-@import               "./config/fonts.rasi"
+@import "./current-theme.rasi"
+@import "./themes/fonts.rasi"
 
 
 window {
     transparency:       "real";
-    background-color:   @base;
+    background-color:   @background;
     border:             2px;
-    border-color:       @lavender;
+    border-color:       @primary;
     border-radius:      4px;
     width:              560px;
     location:           center;
@@ -41,16 +41,16 @@ textbox-prompt-colon {
     border-radius:      4px;
     str:                "󰎇";
     padding:            8px 14px;
-    background-color:   @red;
-    text-color:         @base;
+    background-color:   @primary;
+    text-color:         @background;
 }
 
 prompt {
     enabled:            true;
     padding:            8px;
     border-radius:      4px;
-    background-color:   @green;
-    text-color:         @base;
+    background-color:   @background-alt;
+    text-color:         @foreground;
     vertical-align:     0.5;
 }
 
@@ -58,8 +58,8 @@ message {
     enabled:            true;
     padding:            10px;
     border-radius:      4px;
-    background-color:   @surface-0;
-    text-color:         @text;
+    background-color:   @background-alt;
+    text-color:         @foreground;
 }
 
 listview {
@@ -76,13 +76,13 @@ element {
     enabled:            true;
     padding:            12px;
     border-radius:      4px;
-    background-color:   @surface-0;
-    text-color:         @text;
+    background-color:   @background-alt;
+    text-color:         @foreground;
 }
 
 element selected.normal {
-    background-color:   @lavender;
-    text-color:         @base;
+    background-color:   @primary;
+    text-color:         @background;
 }
 
 element-text {
