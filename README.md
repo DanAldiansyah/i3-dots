@@ -1,6 +1,6 @@
-# Catppuccin Mocha i3wm Dotfiles
+# i3wm Dotfiles: Neon Genesis Evangelion
 
-Selamat datang di repository **i3-dots** saya! Ini adalah konfigurasi lingkungan desktop (*desktop environment/rice*) minimalis berbasis **i3wm** dengan skema warna **Catppuccin Mocha**.
+Selamat datang di repository **i3-dots** saya! Ini adalah konfigurasi lingkungan desktop (*desktop environment/rice*) minimalis berbasis **i3wm** yang memadukan estetika **Neon Genesis Evangelion (Asuka & Ayanami)** dengan skema warna **Catppuccin Mocha**.
 
 [![Built with i3wm](https://img.shields.io/badge/WM-i3gaps-b4befe?style=flat-square&logo=i3)](https://i3wm.org/)
 [![Color Palette](https://img.shields.io/badge/Palette-Catppuccin_Mocha-1e1e2e?style=flat-square&logo=catppuccin)](https://github.com/catppuccin/catppuccin)
@@ -10,14 +10,67 @@ Selamat datang di repository **i3-dots** saya! Ini adalah konfigurasi lingkungan
 
 ## Pratinjau (Screenshots)
 
-<p align="center">
-  <img src="screenshots/ricing.png" alt="Showcase i3 ricing" width="100%" />
-</p>
+### Asuka Langley
 
+<details>
+<summary><b>Polybar</b></summary>
 
-<p align="center">
-  <img src="screenshots/wall-picker.png" alt="Wallpaper selector" width="100%" />
-</p>
+![img](./screenshots/asuka/polybar.png)
+
+</details>
+
+<details>
+<summary><b>Rofi</b></summary>
+
+|Launcher|Wallpaper Picker|
+|--|--|
+|![img](./screenshots/asuka/rofi.png)|![img](./screenshots/asuka/wall-picker.png)|
+
+|Power Menu|Wifi Menu|
+|--|--|
+|![img](./screenshots/asuka/power-menu.png)|![img](./screenshots/asuka/wifi-menu.png)|
+
+|Screenshot Menu|Theme Selector|
+|--|--|
+|![img](./screenshots/asuka/screenshot-menu.png)|![img](./screenshots/asuka/theme-selector.png)|
+
+|Music Controller|
+|--|
+|![img](./screenshots/asuka/music-controller.png)|
+
+</details>
+
+##
+
+### Ayanami Rei
+
+<details>
+<summary><b>Polybar</b></summary>
+
+![img](./screenshots/ayanami/polybar.png)
+
+</details>
+
+<details>
+<summary><b>Rofi</b></summary>
+
+|Launcher|Wallpaper Picker|
+|--|--|
+|![img](./screenshots/ayanami/rofi.png)|![img](./screenshots/ayanami/wall-picker.png)|
+
+|Power Menu|Wifi Menu|
+|--|--|
+|![img](./screenshots/ayanami/power-menu.png)|![img](./screenshots/ayanami/wifi-menu.png)|
+
+|Screenshot Menu|Theme Selector|
+|--|--|
+|![img](./screenshots/ayanami/screenshot-menu.png)|![img](./screenshots/ayanami/theme-selector.png)|
+
+|Music Controller|
+|--|
+|![img](./screenshots/ayanami/music-controller.png)|
+
+</details>
 
 ---
 
@@ -27,13 +80,13 @@ Selamat datang di repository **i3-dots** saya! Ini adalah konfigurasi lingkungan
 | :--- | :--- |
 | **OS Base** | Linux Mint (XFCE Edition) |
 | **Window Manager** | i3wm / i3-gaps |
-| **Status Bar** | Polybar (Catppuccin Theme) |
-| **Application Launcher** | Rofi (Modern Menu Layout) |
+| **Status Bar** | Polybar |
+| **Application Launcher** | Rofi |
 | **Notification Daemon** | Dunst |
 | **Terminal Emulator** | WezTerm |
 | **Shell Prompt** | Zsh + Starship Prompt |
 | **Compositor (Blur/Transparansi)** | Picom |
-| **Wallpaper Engine** | Nitrogen / Feh |
+| **Wallpaper Engine** | Nitrogen |
 | **Main Font** | JetBrainsMono Nerd Font |
 
 ---
@@ -63,32 +116,25 @@ sudo apt install i3 polybar rofi picom dunst cava fastfetch nitrogen scrot zsh t
 ### 3. Salin File Konfigurasi
 
 ```bash
+mkdir -p ~/.config ~/Pictures/i3-wallpapers
+
+# Copy file konfigurasi
 cp -r i3 polybar rofi picom dunst wezterm cava fastfetch starship ~/.config/
+
+# Inisialisasi symlink tema default
+ln -sf ~/.config/rofi/themes/asuka.rasi ~/.config/rofi/current-theme.rasi
+ln -sf ~/.config/dunst/themes/asuka.dunstrc ~/.config/dunst/dunstrc
+
+# Salin Kumpulan Wallpaper
+cp i3-wallpapers/* ~/Pictures/i3-wallpapers
 
 ```
 
 ### 4. Berikan Izin Eksekusi Skrip (*Chmod*)
 
 ```bash
-chmod +x ~/.config/polybar/scripts/*.sh
 chmod +x ~/.config/rofi/scripts/*.sh
 chmod +x ~/.config/dunst/scripts/*.sh
-
-```
-
-### 5. Salin Kumpulan Wallpaper
-
-```bash
-cp -r i3-wallpapers ~/Pictures/
-
-```
-
-### 6. Siapkan Direktori Tangkapan Layar
-
-```bash
-mkdir -p ~/Pictures/i3-screenshots/normal
-mkdir -p ~/Pictures/i3-screenshots/area
-mkdir -p ~/Pictures/i3-screenshots/delay
 
 ```
 
@@ -121,7 +167,7 @@ mkdir -p ~/Pictures/i3-screenshots/delay
 | `Mod + W` | Membuka Menu Pemilih Wallpaper (Visual Grid) | Rofi Wallpaper Script |
 | `Mod + E` | Membuka Menu Kontrol Daya (Powermenu) | Rofi Powermenu Script |
 | `Mod + M` | Membuka Kontroler Musik | Rofi Music Script |
-| `Mod + T` | Membuka File Manager | Thunar |
+| `Mod + T` | Membuka Menu Pemilih Tema | Rofi Theme Script |
 | `Mod + B` | Membuka Web Browser | Brave Origin |
 | `Mod + N` | Membuka Pengatur Jaringan Internet | nmcli / nmtui |
 
@@ -129,8 +175,6 @@ mkdir -p ~/Pictures/i3-screenshots/delay
 
 | Kombinasi Tombol | Fungsi / Aksi | Aplikasi |
 | --- | --- | --- |
-| `PrintScreen` | Tangkapan layar penuh secara instan | Scrot |
-| `Shift + PrintScreen` | Tangkapan layar penuh dengan jeda waktu 5 detik | Scrot |
-| `Mod + PrintScreen` | Tangkapan layar pada area tertentu saja (Seleksi) | Scrot |
+| `PrintScreen` | Membuka Menu Screenshot | Scrot |
 
 ---
