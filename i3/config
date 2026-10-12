@@ -26,8 +26,8 @@ bindsym --release Print exec --no-startup-id ~/.config/rofi/scripts/screenshot.s
 # Rofi music player
 bindsym $mod+m exec --no-startup-id ~/.config/rofi/scripts/music-player.sh
 
-# File manager (Thunar)
-bindsym $mod+t exec thunar
+# Rofi Theme Selector
+bindsym $mod+t exec --no-startup-id ~/.config/rofi/scripts/theme-selector.sh
 
 # Brave-origin
 bindsym $mod+b exec brave-origin
